@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-SRC = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c
+SRC = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_putunsigned.c ft_puthex.c
 OBJ = $(SRC:.c=.o)
 AR = ar rcs
 CFLAGS = -Wall -Wextra -Werror
@@ -13,7 +13,7 @@ $(NAME): $(OBJ)
 	cc $(CFLAGS) -c $< -o $@
 
 main:
-	cc $(CFLAGS) main.c libft.a $(NAME)
+	cc $(CFLAGS) main.c $(NAME) libft.a -o test_printf
 
 clean:
 	rm -f $(OBJ)

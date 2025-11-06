@@ -21,19 +21,22 @@ static void ft_checktype(char message, va_list args, int count)
     else if (message == 'd' || message == 'i')
         count += ft_putnbr(va_arg(args, int));
     else if (message == 'u')
-      ft_putunsigned(va_arg(args, unsigned int));
-    //else if (message == 'x' || message == 'X')
-      //  ft_puthex(va_arg(args, unsigned int), message);
-    //else if (message == 'p')
-      //  ft_putpointer(va_arg(args, unsigned long long));
-    //else if (message == '%')
-      //  ft_putchar('%');
+        count += ft_putunsigned(va_arg(args, unsigned int));
+    else if (message == 'x' || message == 'X')
+        count += ft_puthex(va_arg(args, unsigned int), message);
+    else if (message == 'p')
+        count += ft_putpointer(va_arg(args, unsigned long long));
+    else if (message == '%')
+        count += ft_putchar('%');
 }
 
 int ft_printf(const char *format, ...)
 {
     int count;
+    int i;
+    
     count = 0;
+    i = 0;
 	va_list args;
     va_start(args, format);
     while (format[count])
@@ -43,11 +46,12 @@ int ft_printf(const char *format, ...)
             count++;
             ft_checktype(format[count], args, count);
             count++;
+            i += 2;
         }
         write(1, &format[count], 1);
         count++;
     }
     va_end(args);
-    printf("%d", count);
-    return (count);
+    printf("%d", count - i);
+    return (count - i);
 }
