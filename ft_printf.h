@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jneris-d <tbpjaum@outlook.com>             +#+  +:+       +#+        */
+/*   By: jneris-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 00:00:00 by jneris-d          #+#    #+#             */
-/*   Updated: 2025/11/07 00:00:00 by jneris-d         ###   ########.fr       */
+/*   Created: 2025/11/12 15:58:04 by jneris-d          #+#    #+#             */
+/*   Updated: 2025/11/12 15:58:43 by jneris-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "libft.h"
 # include <unistd.h>
 
 int		ft_printf(const char *format, ...);
