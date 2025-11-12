@@ -1,16 +1,22 @@
-#include "printf.h"
+#include "ft_printf.h"
 
-int ft_putunsigned(unsigned int n)
+int ft_putnbr(int n)
 {
-    unsigned long    nbr;
+    long    nbr;
     int     count;
     char    c;
     
     count = 0;
     nbr = n;
+    if (n < 0)
+    {
+        write(1, "-", 1);
+        count++;
+        nbr = -nbr;
+    }
     if (nbr >= 10)
     {
-        ft_putunsigned(nbr / 10);
+        ft_putnbr(nbr / 10);
         c = (nbr % 10) + '0';
         write(1, &c, 1);
         count++;

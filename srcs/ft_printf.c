@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static void ft_checktype(char message, va_list args, int count)
+static int ft_checktype(char message, va_list args)
 {
+    int count = 0;
     if (message == 'c')
         count += ft_putchar(va_arg(args, int));
     else if (message == 's')
@@ -28,6 +29,7 @@ static void ft_checktype(char message, va_list args, int count)
         count += ft_putpointer(va_arg(args, unsigned long long));
     else if (message == '%')
         count += ft_putchar('%');
+    return (count);
 }
 
 int ft_printf(const char *format, ...)
@@ -44,14 +46,13 @@ int ft_printf(const char *format, ...)
         if (format[count] == '%')
         {
             count++;
-            ft_checktype(format[count], args, count);
+            i += ft_checktype(format[count], args);
             count++;
-            i += 2;
         }
         write(1, &format[count], 1);
         count++;
+        i++;
     }
     va_end(args);
-    printf("%d", count - i);
-    return (count - i);
+    return (i);
 }
