@@ -6,7 +6,7 @@
 /*   By: jneris-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:03:27 by jneris-d          #+#    #+#             */
-/*   Updated: 2025/11/12 16:05:12 by jneris-d         ###   ########.fr       */
+/*   Updated: 2025/11/19 11:40:56 by jneris-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ int	ft_puthexptr(unsigned long long n)
 	count++;
 	return (count);
 }
-/* The ft_putpointer function in C++ takes an unsigned long long integer
-representing a memory address and prints it in a hexadecimal format prefixed with
-"0x". If the pointer is null, it outputs "(nil)" instead, and the function returns
-the total number of characters printed. */
+
 int	ft_putpointer(unsigned long long ptr)
 {
 	char	*hex;

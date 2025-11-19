@@ -6,7 +6,7 @@
 /*   By: jneris-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:52:36 by jneris-d          #+#    #+#             */
-/*   Updated: 2025/11/12 16:00:35 by jneris-d         ###   ########.fr       */
+/*   Updated: 2025/11/19 11:41:06 by jneris-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ static int	ft_checktype(char message, va_list args)
 		count = ft_putchar('%');
 	return (count);
 }
-/* The ft_printf function is a custom implementation of the standard printf
-function in C, which formats and prints data to the standard output. It
-processes a format string and a variable number of arguments, handling format
-specifiers via the helper function ft_checktype, and returns the total number
-of characters printed. */
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
