@@ -1,6 +1,7 @@
 # ft_printf
 
 Implementacao do projeto `ft_printf`: uma reimplementacao da funcao `printf` da libc com um subconjunto de conversores.
+Para rodar ela rapidamente apenas use (make) e depois (make m) no terminal.
 
 ## Sobre o projeto
 
