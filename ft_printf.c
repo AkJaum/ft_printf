@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jneris-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akjaum <akjaum@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:52:36 by jneris-d          #+#    #+#             */
-/*   Updated: 2025/11/19 11:41:06 by jneris-d         ###   ########.fr       */
+/*   Updated: 2026/04/14 20:56:29 by akjaum           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 static int	ft_checktype(char message, va_list args)
 {
 	int	count;
-	int	i;
 
-	i = 0;
 	if (message == 'c')
 		count = ft_putchar(va_arg(args, int));
 	else if (message == 's')
